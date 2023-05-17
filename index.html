@@ -7,14 +7,129 @@
     <title>My Planner</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Plan effectively for efficiency</h1>
-    <p>Automate your planning today with My Planner</p>
+    <!-- navigation -->
+    <nav>
+      <div class="logo">
+        <h4>My Planner</h4>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Events & Tasks</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Plan effectively for efficiency</h1>
+        <p>
+          Automate your planning today with My Planner. My planner lets you plan
+          yourself either timewise, eventwise or taskwise! try it 😝
+        </p>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Main Section -->
+    <div class="main">
+      <!-- Features section -->
+      <section class="features">
+        <div class="card">
+          <img src="images/time.jpeg" alt="" width="100%" height="200vh" />
+          <div class="feature">
+            <h3>Plan your day</h3>
+            <p>
+              Plan your day with ease and get reminders on your tasks. You can
+              also set your tasks to repeat daily, weekly or monthly.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/week.jpg" alt="" width="100%" height="200vh" />
+          <div class="feature">
+            <h3>Plan your week</h3>
+            <p>
+              Plan your week with ease and get reminders on your tasks. You can
+              also set your tasks to repeat daily, weekly or monthly.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/month.avif" alt="" width="100%" height="200vh" />
+          <div class="feature">
+            <h3>Plan your month</h3>
+            <p>
+              Plan your month with ease and get reminders on your tasks. You can
+              also set your tasks to repeat daily, weekly or monthly.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Events, tasks section -->
+      <section class="add">
+        <div class="add-text">
+          <h2>Add Events and Tasks</h2>
+          <p>
+            Add events and tasks to your planner and get reminders on them. You
+            can also set your tasks to repeat daily, weekly or monthly.
+          </p>
+        </div>
+        <div class="add-img">
+          <img src="images/add.png" alt="" />
+        </div>
+        <!-- add a form to capture events and tasks, include time and also duration -->
+        <div class="add-form">
+          <form action="">
+            <label for="event">Event</label>
+            <input type="text" name="event" id="event" />
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" />
+            <label for="time">Time</label>
+            <input type="time" name="time" id="time" />
+            <label for="duration">Duration</label>
+            <input type="text" name="duration" id="duration" />
+            <label for="repeat">Repeat</label>
+            <select name="repeat" id="repeat">
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+            <input type="submit" value="Add" />
+          </form>
+        </div>
+      </section>
+
+      <!-- Notifications -->
+      <section class="notifications">
+        <div class="notification-text">
+          <h2>Get Notifications</h2>
+          <p>
+            Get notifications on your events and tasks. You can also set your
+            tasks to repeat daily, weekly or monthly.
+          </p>
+        </div>
+        <div class="notification-img">
+          <img src="images/notification.png" alt="" />
+        </div>
+      </section>
+    </div>
 
     <footer>
-      <p>&copy; 2023 My Planner. All rights reserved.</p>
+      <p>&copy;2023 My Planner. All rights reserved.</p>
     </footer>
     <script src="js/index.js"></script>
   </body>
