@@ -181,7 +181,7 @@ nav ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%; /* Change to 100% width to make it responsive */
-  max-width: 400px; /* Add a maximum width to limit card size */
+  max-width: 360px; /* Add a maximum width to limit card size */
   margin: 24px;
 }
 
@@ -199,7 +199,7 @@ nav ul {
 
 img {
   width: 100%; /* Adjust image width to be responsive */
-  height: auto; /* Allow height to adjust proportionally */
+  height: 200px; /* Allow height to adjust proportionally */
 }
 
 .add,
@@ -285,10 +285,20 @@ footer {
   text-align: center;
 }
 
+@media screen and (min-width: 769px) and (max-width: 1120px) {
+  .hero {
+    margin: 0 16px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
     cursor: pointer;
+  }
+
+  .hero {
+    margin: 0 16px;
   }
 
   ul {
@@ -340,6 +350,14 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+  .hero {
+    margin: 0 16px;
+  }
+
+  .hero-text a {
+    padding: 10px 12px;
+  }
+
   .event-card {
     flex-basis: 100%;
   }
