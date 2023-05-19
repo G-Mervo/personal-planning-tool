@@ -8,36 +8,59 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="" sizes="32x32" href="a" />
   </head>
   <body>
     <!-- navigation -->
     <nav>
-      <div class="logo">
-        <h4>My Planner</h4>
+      <a class="logo" href="#">
+        <h4>
+          <span class="plan">My Planner</span>
+          <span class="time">⏰</span>
+        </h4>
+      </a>
+      <!-- <div class="nav-links"> -->
+      <!-- <div class="myNav"></div> -->
+      <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="#features" class="nav-link">Features</a>
+        </li>
+        <li class="nav-item">
+          <a href="#events" class="nav-link">Events & Tasks</a>
+        </li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-      <div class="nav-links">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Events & Tasks</a></li>
-          <li><a href="#">About Us</a></li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </div>
+      <!-- </div> -->
     </nav>
     <!-- Hero section -->
     <section class="hero">
       <div class="hero-text">
-        <h1>Plan effectively for efficiency</h1>
+        <h1>
+          <span class="why">Plan effectively</span><br />
+          <span class="what">for efficiency</span>
+        </h1>
         <p>
           Automate your planning today with My Planner. My planner lets you plan
           yourself either timewise, eventwise or taskwise! try it 😝
         </p>
-        <a href="#" class="btn">Get Started</a>
+        <a href="#" class="btn started">Get Started</a>
+        <a href="#" class="btn learnMore">Learn More</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="../assets/images/hero.jpg"
+          alt="managing-time-for-success"
+          width="500px"
+          height="315px"
+        />
       </div>
     </section>
 
@@ -46,7 +69,7 @@
       <!-- Features section -->
       <section class="features">
         <div class="card">
-          <img src="images/time.jpeg" alt="" width="100%" height="200vh" />
+          <img src="assets/images/time.jpeg" alt="" />
           <div class="feature">
             <h3>Plan your day</h3>
             <p>
@@ -57,7 +80,7 @@
         </div>
 
         <div class="card">
-          <img src="images/week.jpg" alt="" width="100%" height="200vh" />
+          <img src="assets/images/week.jpg" alt="" />
           <div class="feature">
             <h3>Plan your week</h3>
             <p>
@@ -68,7 +91,7 @@
         </div>
 
         <div class="card">
-          <img src="images/month.avif" alt="" width="100%" height="200vh" />
+          <img src="assets/images/month.avif" alt="" />
           <div class="feature">
             <h3>Plan your month</h3>
             <p>
@@ -93,7 +116,7 @@
         </div>
         <!-- add a form to capture events and tasks, include time and also duration -->
         <div class="add-form">
-          <form action="">
+          <form id="add-form">
             <label for="event">Event</label>
             <input type="text" name="event" id="event" />
             <label for="date">Date</label>
@@ -104,12 +127,21 @@
             <input type="text" name="duration" id="duration" />
             <label for="repeat">Repeat</label>
             <select name="repeat" id="repeat">
+              <option value="once">Once</option>
               <option value="daily">Daily</option>
               <option value="weekly">Weekly</option>
               <option value="monthly">Monthly</option>
             </select>
-            <input type="submit" value="Add" />
+            <button type="button" id="add-button">Add</button>
           </form>
+        </div>
+      </section>
+
+      <!-- Events Display Section -->
+      <section>
+        <h2>My Events and Tasks</h2>
+        <div class="events" id="events-section">
+          <ul id="events-list"></ul>
         </div>
       </section>
 
