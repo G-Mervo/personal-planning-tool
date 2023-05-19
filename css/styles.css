@@ -1,4 +1,7 @@
-/* https://colorhunt.co/palette/ffa41b00083900508200a8cc 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+/* color palletes
+option 1: https://colorhunt.co/palette/ffa41b00083900508200a8cc 
 option 2: https://colorhunt.co/palette/277bc0ffb200ffcb42fff4cf
 option 3: https://colorhunt.co/palette/001e6c035397e8630afcd900
 
@@ -8,18 +11,44 @@ option 3: https://colorhunt.co/palette/001e6c035397e8630afcd900
 #00A8CC   rgb(0, 168, 204)
 orange navy blue summer space
 */
+
+/* css variables */
+:root {
+  --normal-font: 400;
+  --bold-font: 600;
+  --bolder-font: 900;
+  --primary-color: #277bc0;
+  --secondary-color: #ffb200;
+  --line-height: 1.7rem;
+  --transition: 0.4s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: var(--transition);
 }
 
 body {
-  background-color: #f2f2f2;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
 }
 
 .container {
@@ -31,69 +60,96 @@ body {
 /* style the nav */
 nav {
   display: flex;
-  background-color: #333;
+  background-color: #fff4cf;
   color: #fff;
-  padding: 20px;
-  height: 64px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  box-shadow: 2px 3px 2px #cebd8f;
 }
 
 nav .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  /* justify-content: flex-start; */
-}
-
-nav .nav-links {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  margin: 0 8px;
-  /* justify-content: flex-end;
-  jus */
+  justify-content: flex-end;
+  align-items: center;
 }
 
-nav ul li {
-  margin: 0 8px;
+.nav-item {
+  margin-left: 2rem;
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
+.nav-link {
+  font-weight: var(--bold-font);
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.hamburger {
+  display: none;
 }
 
-nav ul li a.active {
-  text-decoration: underline;
+.bar {
+  background-color: #020202;
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 6px auto;
 }
 
 /* style hero section */
 /* include an images as background, and let it be a cover */
 .hero {
-  background: url("../images/hero.jpg") no-repeat center center/cover;
-  height: 80vh;
+  /* background: url("../assets/images/hero.jpg") no-repeat center center/cover; */
+  /* height: 80vh; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1100px;
 }
 
-.hero-text {
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.why {
+  color: var(--primary-color);
+}
+
+.what {
+  color: var(--secondary-color);
+}
+
+.hero p {
+  line-height: var(--line-height);
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 0.6rem;
+  border: none;
+  font-size: 1.4rem;
+}
+/* .hero-text {
   text-align: center;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.78);
   padding: 20px;
   border-radius: 5px;
   margin-top: 52vh;
-}
+} */
 
 /* style hero text button  */
 .hero-text a {
@@ -115,16 +171,17 @@ nav ul li a.active {
   padding: 4px;
 }
 
-/* style feature as cards*/
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 25%;
+  width: 100%; /* Change to 100% width to make it responsive */
+  max-width: 400px; /* Add a maximum width to limit card size */
   margin: 24px;
 }
 
@@ -140,10 +197,150 @@ nav ul li a.active {
   padding: 4px;
 }
 
+img {
+  width: 100%; /* Adjust image width to be responsive */
+  height: auto; /* Allow height to adjust proportionally */
+}
+
+.add,
+.notifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px;
+}
+
+.add-img,
+.notification-img {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.add-form form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.add-form label,
+.add-form input,
+.add-form select {
+  width: 100%;
+}
+
+.add-form input[type="submit"] {
+  width: auto;
+  justify-self: start;
+  padding: 8px 16px;
+}
+
+/* Events */
+.events {
+  margin: 24px;
+}
+
+.events h2 {
+  text-align: center;
+}
+
+#events-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.event-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  flex: 0 1 calc(33.33% - 16px);
+  margin-bottom: 16px;
+}
+
+.event-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.event-card-content {
+  padding: 16px;
+}
+
+.event-card h3 {
+  margin-top: 0;
+}
+
+.event-card p {
+  margin-bottom: 0;
+}
+
 /* style footer section */
 footer {
   background-color: #333;
   color: #fff;
   padding: 20px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  ul {
+    background-color: #fff;
+    flex-direction: column;
+    position: fixed;
+    left: 100%;
+    top: 5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  ul.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2rem 0;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .add-form form {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    flex-basis: calc(50% - 16px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .event-card {
+    flex-basis: 100%;
+  }
 }
